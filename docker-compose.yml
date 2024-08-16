@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:15
+    ports:
+      - "6543:5432"
+    environment:
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: mydb
+      POSTGRES_TEST_DB_HOST: localhost
+      POSTGRES_TEST_DB_PORT: 6543
+    volumes:
+      - ./postgres_test_db_data:/var/lib/postgresql/data
